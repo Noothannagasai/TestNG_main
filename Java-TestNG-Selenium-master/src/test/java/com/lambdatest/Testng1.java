@@ -37,7 +37,7 @@ public class Testng1 {
 			  WebDriverWait wait = new WebDriverWait(driver, 20);
 		         //wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".text-size-50.text-white.font-bold")));
 		         //wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.cssSelector(".text-size-50.text-white.font-bold"))));
-		        // wait.until(ExpectedConditions.titleContains("Selenium Grid Online | Run Selenium Test On Cloud"));
+		         wait.until(ExpectedConditions.titleContains("Selenium Grid Online | Run Selenium Test On Cloud"));
 		         String title = driver.getTitle();
 		         SoftAssert softAssert = new SoftAssert();
 		         softAssert.assertEquals(title, "LambdaTest");
@@ -77,8 +77,8 @@ public class Testng1 {
   @Parameters({ "browser", "version", "platform" })
   public void setUpClass(String browser, String version, String platform) throws Exception {
 
-  	String username = "nagac2169"; 
-		String accesskey = "IIePN9nm9jPIfh208a00ZiaZO8Bk1NiIvZK8Y19oCfAnTdNBHA"; 
+  	String username = "panabakamnoothan"; 
+		String accesskey = "nTJGmEd5ONboKwHcZiC0TrsNoGtqsTfrks2UCrYwQmYMiZPLSM"; 
 
   		DesiredCapabilities capability = new DesiredCapabilities();    	
         
@@ -93,10 +93,10 @@ public class Testng1 {
   		capability.setCapability("visual", true);
 
   		String gridURL = "https://" + username + ":" + accesskey + "@hub.lambdatest.com/wd/hub";
-  		//System.out.println(gridURL);
+  		System.out.println(gridURL);
   		driver = new RemoteWebDriver(new URL(gridURL), capability);
   		System.out.println(capability);
-  		//System.out.println(driver.getSessionId());
+  		System.out.println(driver.getSessionId());
           driver.get("https://www.lambdatest.com/selenium-playground/");
           driver.manage().deleteAllCookies();
 	 
